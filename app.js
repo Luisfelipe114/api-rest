@@ -10,7 +10,7 @@ import homeRoutes from './src/routes/homeRoutes';
 
 import userRoutes from './src/routes/userRoutes';
 
-import tokerRoutes from './src/routes/tokenRoutes';
+import tokenRoutes from './src/routes/tokenRoutes';
 
 class App {
   constructor() {
@@ -34,7 +34,7 @@ class App {
   routes() {
     this.app.use('/', homeRoutes);
     this.app.use('/users/', userRoutes);
-    this.app.use('/tokens/', tokerRoutes);
+    this.app.use('/tokens/', tokenRoutes);
   }
 }
 

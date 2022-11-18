@@ -9,7 +9,7 @@ route.get('/', loginRequired, userController.index); // lista todos os usuários
 route.get('/:id', userController.show); // lista um usuário
 
 route.post('/', userController.create);
-route.put('/:id', userController.update);
-route.delete('/:id', userController.delete);
+route.put('/', loginRequired, userController.update);
+route.delete('/', loginRequired, userController.delete);
 
 export default route;
