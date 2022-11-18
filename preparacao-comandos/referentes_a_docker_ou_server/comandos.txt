@@ -1,0 +1,8 @@
+após a instalação do docker e do maria db:
+*checando status:
+=sudo docker ps
+=sudo docker stop name_container(para parar o docker)
+=sudo docker start name_container(para iniciar o docker novamente)
+
+*se quiser remover um cotainer:
+=sudo docker rm name_container
