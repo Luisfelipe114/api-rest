@@ -4,4 +4,3 @@ node_modules
 .env
 preparacao-comandos
 src/database/seeds/
-uploads/

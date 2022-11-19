@@ -6,8 +6,13 @@ import Aluno from '../models/Aluno';
 
 import User from '../models/User';
 
-const models = [Aluno, User];
+import Foto from '../models/Foto';
+
+const models = [Aluno, User, Foto];
 
 const connection = new Sequelize(databaseConfig);
 
 models.forEach((model) => model.init(connection));
+
+// para fazer as associações
+models.forEach((model) => model.associate && model.associate(connection.models));
