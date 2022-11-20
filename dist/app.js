@@ -31,12 +31,14 @@ class App {
       extended: true,
     })); // para o POST funcionar
     this.app.use(_express2.default.json());
-    this.app.use(_express2.default.static(_path.resolve.call(void 0, __dirname, 'uploads')));
+    this.app.use(_express2.default.static(_path.resolve.call(void 0, __dirname, '..', 'uploads')));
   }
 
+  /*
   middlewares() {
 
   }
+  */
 
   routes() {
     this.app.use('/', _homeRoutes2.default);

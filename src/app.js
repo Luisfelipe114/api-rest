@@ -31,12 +31,14 @@ class App {
       extended: true,
     })); // para o POST funcionar
     this.app.use(express.json());
-    this.app.use(express.static(resolve(__dirname, 'uploads')));
+    this.app.use(express.static(resolve(__dirname, '..', 'uploads')));
   }
 
+  /*
   middlewares() {
 
   }
+  */
 
   routes() {
     this.app.use('/', homeRoutes);
