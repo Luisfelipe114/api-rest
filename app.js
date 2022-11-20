@@ -1,5 +1,7 @@
 import dotenv from 'dotenv';
 
+import { resolve } from 'path';
+
 dotenv.config();
 
 import './src/database';
@@ -29,6 +31,7 @@ class App {
       extended: true,
     })); // para o POST funcionar
     this.app.use(express.json());
+    this.app.use(express.static(resolve(__dirname, 'uploads')));
   }
 
   middlewares() {
