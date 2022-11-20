@@ -22,7 +22,7 @@ class App {
   constructor() {
     this.app = express();
     this.config();
-    this.middlewares();
+    // this.middlewares();
     this.routes();
   }
 
