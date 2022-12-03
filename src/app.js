@@ -6,17 +6,31 @@ dotenv.config();
 
 import './database';
 
+import cors from 'cors';
+
+import helmet from 'helmet';
+
 import express from 'express';
 
 import homeRoutes from './routes/homeRoutes';
-
 import userRoutes from './routes/userRoutes';
-
 import tokenRoutes from './routes/tokenRoutes';
-
 import alunoRoutes from './routes/alunoRoutes';
-
 import fotoRoutes from './routes/fotoRoutes';
+
+const whiteList = [
+  'http://localhost:3000',
+];
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (whiteList.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by cors'));
+    }
+  },
+};
 
 class App {
   constructor() {
@@ -27,6 +41,8 @@ class App {
   }
 
   config() {
+    this.app.use(cors(corsOptions));
+    this.app.use(helmet());
     this.app.use(express.urlencoded({
       extended: true,
     })); // para o POST funcionar
