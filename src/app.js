@@ -42,7 +42,7 @@ class App {
 
   config() {
     this.app.use(cors(corsOptions));
-    this.app.use(helmet());
+    this.app.use(helmet.crossOriginResourcePolicy({ policy: 'cross-origin' }));
     this.app.use(express.urlencoded({
       extended: true,
     })); // para o POST funcionar
